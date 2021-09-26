@@ -13,11 +13,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
@@ -27,11 +33,14 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
-
-    ReactiveFormsModule,
-    HttpClientModule
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule
   ],
   exports: [
+    ReactiveFormsModule,
+    HttpClientModule,
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
@@ -41,9 +50,10 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatIconModule,
     MatTableModule,
-
-    ReactiveFormsModule,
-    HttpClientModule
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule
   ]
 })
 export class SharedModule { }

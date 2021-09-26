@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
     
     const usuario = this.form.value.usuario;
     const password = this.form.value.password;
-    console.log(usuario);
-    console.log(password);
+    // console.log(usuario);
+    // console.log(password);
 
     if(usuario == 'admin' && password == '12345'){
       //Redireccionamos al dashborad.
