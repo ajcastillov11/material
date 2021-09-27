@@ -1,5 +1,47 @@
 <div class="container">
-    <mat-toolbar>
-        <span>Registrar Usuario</span>
-      </mat-toolbar>
+  <mat-toolbar>
+    <span>Registrar Usuario</span>
+  </mat-toolbar>
+
+  <mat-card style="margin-top: 10px;">
+    <form [formGroup]="form" autocomplete="off" (ngSubmit)="agregarUsuario()" >
+      <mat-grid-list cols="4" rowHeight="70px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName="usuario">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="5">
+          <img src="./assets/img/usuario.png"  width="250" height="250">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Sexo</mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option *ngFor="let item of sexo" [value]="item.value">
+                {{item.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <button mat-raised-button style="margin-right: 20px;" >Volver</button>
+          <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid">Aceptar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
 </div>
